@@ -22,7 +22,7 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(system.defaultworkdingdirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: |
       **/*.jar
       Dockerfile
@@ -30,7 +30,7 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.Artifactstagingdirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 - task: Docker@2
